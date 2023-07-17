@@ -1,0 +1,6 @@
+<!--pages/profile/profile.wxml-->
+<view class='profile'>
+  <w-header/>
+  <w-info/>
+  <w-list-view infos="{{orderList}}"/>
+</view>

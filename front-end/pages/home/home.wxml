@@ -1,0 +1,55 @@
+<!--pages/home/home.wxml-->
+<scroll-view class='home' scroll-y>
+  <view>
+    <image class="rounded-image" src="/assets/home/banner.jpg" style="width: 660rpx; height: 366rpx; display: inline-block; box-sizing: border-box; position: relative; left: 46rpx; top: 0rpx"></image>
+  </view>
+
+  <!-- 2.自提按钮与代取按钮 -->
+  <view class="container" style="width: 750rpx; height: 500rpx; display: flex; box-sizing: border-box">
+    <view class="button-group">
+      <view class="button" style="background-color: #0077CC; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <image src="/assets/icon/scan.png" class="button-icon"></image>
+        <text style="text-align: center;">自提</text>
+      </view>
+      <view class="button" style="background-color: #008000; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <image src="/assets/icon/photo.png" class="button-icon"></image>
+        代取
+      </view>
+    </view>
+    <view class="icon-group">
+      <view class="icon-item" style="background-color: transparent">
+        <image class="icon" src="/assets/icon/chat.png"></image>
+        <text class="text">聊天信息</text>
+      </view>
+      <view class="icon-item" style="background-color: transparent">
+        <image class="icon" src="/assets/icon/location.png"></image>
+        <text class="text">修改地址</text>
+      </view>
+      <view class="icon-item" style="background-color: transparent">
+        <image class="icon" src="/assets/icon/feedback.png"></image>
+        <text class="text">问题反馈</text>
+      </view>
+      <view class="icon-item" style="background-color: transparent">
+        <image class="icon" src="/assets/icon/information.png"></image>
+        <text class="text">历史信息</text>
+      </view>
+    </view>
+  </view>
+  <van-nav-bar title="近期订单" right-text="全部" bind:click-right="onClickRight" />
+  <van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="全部">
+      <van-card num="999" price="10.00" desc="描述信息" title="商品标题" thumb=" " tag="标签">
+        <view slot="footer">
+          <van-button size="normal">找人代取</van-button>
+          <van-button type="primary" size="normal">自提</van-button>
+        </view>
+        <view slot="bottom">
+          存入时间：2023-07-17
+        </view>
+      </van-card>
+    </van-tab>
+    <van-tab title="待取件">
+    </van-tab>
+    <van-tab title="已取件">待定</van-tab>
+  </van-tabs>
+</scroll-view>

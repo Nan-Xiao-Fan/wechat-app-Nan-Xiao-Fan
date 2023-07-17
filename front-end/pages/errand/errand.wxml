@@ -1,0 +1,26 @@
+<!--pages/errand/errand.wxml-->
+<view class='order'>
+  <scroll-view class='order-list' scroll-y>
+    <van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="新任务">
+    <van-card
+  desc="起点：南京大学陶园"
+  title="终点：南京大学广州路外卖柜"
+>
+  <view slot="footer">
+    <van-button type="primary" size="large">接单</van-button>
+  </view>
+  <view slot="bottom">
+    发起时间：2023-07-17
+  </view>
+  <view slot="tags">
+    <van-tag type="primary">无汤</van-tag>
+  </view>
+</van-card>
+</van-tab>
+  <van-tab title="待取件">显示接单后的单子信息，此时才会显示被送人联系方式和聊天按钮</van-tab>
+  <van-tab title="配送中">待定</van-tab>
+  <van-tab title="路线规划">对接地图APP，为配送员提供路线规划</van-tab>
+</van-tabs>
+  </scroll-view>
+</view>

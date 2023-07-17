@@ -1,0 +1,39 @@
+<!--pages/order/order.wxml-->
+<view class='order'>
+  <scroll-view class='order-list' scroll-y>
+    <van-tabs active="{{ active }}" bind:change="onChange">
+      <van-tab title="全部">
+        <van-card num="999" tag="标签" price="10.00" desc="描述信息" title="商品标题" thumb="{{ imageURL }}">
+          <view slot="footer">
+            <van-button size="normal">找人代取</van-button>
+            <van-button type="primary" size="normal">自提</van-button>
+          </view>
+          <view slot="bottom">
+            存入时间：2023-07-17
+          </view>
+        </van-card>
+        <van-card num="999" tag="标签" price="10.00" desc="描述信息" title="商品标题" thumb="{{ imageURL }}">
+          <view slot="footer">
+            <van-button size="normal">找人代取</van-button>
+            <van-button type="primary" size="normal">自提</van-button>
+          </view>
+          <view slot="bottom">
+            存入时间：2023-07-17
+          </view>
+        </van-card>
+        <van-card num="999" tag="标签" price="10.00" desc="描述信息" title="商品标题" thumb="{{ imageURL }}">
+          <view slot="footer">
+            <van-button size="normal">找人代取</van-button>
+            <van-button type="primary" size="normal">自提</van-button>
+          </view>
+          <view slot="bottom">
+            存入时间：2023-07-17
+          </view>
+        </van-card>
+      </van-tab>
+      <van-tab title="待取件">内容 2</van-tab>
+      <van-tab title="已取件">内容 3</van-tab>
+    </van-tabs>
+
+  </scroll-view>
+</view>
