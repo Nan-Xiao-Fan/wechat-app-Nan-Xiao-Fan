@@ -1,15 +1,17 @@
 // pages/profile/profile.js
 Page({
   data: {
-    orderList: [
-      { icon: 'message.png', info: '我的消息' },
-      { icon: 'pointer.png', info: '积分商城' },
-      { icon: 'policy.png', info: '隐私政策' },
-      { icon: 'agreement.png', info: '服务协议' },
-      { icon: 'feedback.png', info: '联系客服' },
-    ]
+    userInfo:null
   },
   onLoad: function (options) {
-
+    const userInfo=getApp().globalData.userInfo;
+    wx.setStorageSync('userInfo', userInfo)
   },
+    // 监听登录组件触发的事件
+    onUpdateUserInfo(e) {
+      const userInfo = e.detail.userInfo;
+      this.setData({
+        userInfo: userInfo
+      });
+    },
 })

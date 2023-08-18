@@ -1,17 +1,20 @@
 <!--pages/home/home.wxml-->
 <scroll-view class='home' scroll-y>
-  <view>
-    <image class="rounded-image" src="/assets/home/banner.jpg" style="width: 660rpx; height: 366rpx; display: inline-block; box-sizing: border-box; position: relative; left: 46rpx; top: 0rpx"></image>
-  </view>
-
+  <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for-items="{{swiperData}}">
+      <swiper-item>
+        <image src="{{item.imgurl}}" class="slide-image" mode="aspectFit" style="width: 660px; height: 360px;" />
+      </swiper-item>
+    </block>
+  </swiper>
   <!-- 2.自提按钮与代取按钮 -->
   <view class="container" style="width: 750rpx; height: 500rpx; display: flex; box-sizing: border-box">
     <view class="button-group">
-      <view class="button" style="background-color: #0077CC; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <view class="button" style="background-color: #0077CC; display: flex; flex-direction: column; justify-content: center; align-items: center;" bindtap="scanCode">
         <image src="/assets/icon/scan.png" class="button-icon"></image>
         <text style="text-align: center;">自提</text>
       </view>
-      <view class="button" style="background-color: #008000; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <view class="button" style="background-color: #008000; display: flex; flex-direction: column; justify-content: center; align-items: center;" bindtap="showCode">
         <image src="/assets/icon/photo.png" class="button-icon"></image>
         代取
       </view>
@@ -38,7 +41,7 @@
   <van-nav-bar title="近期订单" right-text="全部" bind:click-right="onClickRight" />
   <van-tabs active="{{ active }}" bind:change="onChange">
     <van-tab title="全部">
-      <van-card num="999" price="10.00" desc="描述信息" title="商品标题" thumb=" " tag="标签">
+      <van-card num="999" price="10.00" desc="描述信息" title="商品标题" tag="标签">
         <view slot="footer">
           <van-button size="normal">找人代取</van-button>
           <van-button type="primary" size="normal">自提</van-button>

@@ -1,0 +1,7 @@
+<!--components/my-userinfo/my-userinfo.wxml-->
+<view class='profile'>
+  <w-header></w-header>
+  <w-info></w-info>
+  <w-list-view infos="{{orderList}}"/>
+  <text>{{userInfo.phone}}</text>
+</view>
